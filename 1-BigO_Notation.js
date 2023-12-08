@@ -1,49 +1,67 @@
-
-// Understanding the problem
-
-/*
-E.g
-.................................................................
- Write a function which takes two numbers and returns their sum. 
- ................................................................
- 
- - can  restate the problem in my own words ?
-   using strings or numbers, how to handle remainders
-   
- -  What are the inputs that go into the problem?
-    what if some argurment are empty or off, like 0, white spaces
-    
- - What are the outputs that  should come from the solution to the problem ?
- - can  the  outputs be  determined from the inputs ? in other words, do i have enough information to solve the problem ? 9You may not be able to answer this question until you  set about solving the problem)
- - How can i label the important pieces of data that are a part  of the problem. 
-*/
-
-
+for(var i = 0; i < 3; i++){
+  setTimeout(() =>{
+    console.log(i);
+  }, 100);
+}
 
 /*
-UNDERSTAND THE PROBLEM
-Can I restate the problem in my own words?
-What are the inputs that go into the problem?
-What are the outputs that should come from the solution to the problem?
-Can the outputs be determined from the inputs? In other words, do I have enough information to solve the problem? (You may not be able to answer this question until you set about solving the problem. That's okay; it's still worth considering the question at this early stage.)
-How should I label the important pieces of data that are a part of the problem?
+BREAK IT DOWN
+Explicitly write out the steps you need to take.
 
-EXPLORE EXAMPLES
-Start with Simple Examples
-Progress to More Complex Examples
-Explore Examples with Empty Inputs
-Explore Examples with Invalid Inputs
-
-.............................................................................
-Write a function which takes in a string and returns counts of each character in the string. 
-.....................................................................
+This forces you to think about the code you'll write before you write it, and helps you catch any lingering conceptual issues or misunderstandings before you dive in and have to worry about details (e.g. language syntax) as well. 
 
 */
+// Write a function which takes in a string and returns counts of each character in the string. 
 
-charCount("aaaa"); // {a:4}
-charCount("hello"); // {h:1;, e:1, l:2, o:1}
+//function charCount(str){
+//do something
+// return  an object  with keys that are lowercasse alphanumeric  characters in the string: values should be
+//}
 
-"my phone number is 123456" // do we want to account for spaces & are we going to consider numbers.
-"Hello hi" // do we ignore casing(uppercase or lowercase)
-charCount(""); // empty strings, null or invalid
+function charCount(str){
+//make object to return at end
+// loop over string, for each character.... 
+  //if char is number/letter AND is a key in object, add on to count
+ //if char is number/letter AND not in objct, add it to object and set value to 1
+ //if char is Something else (space, period, etc), don't do anything
+// return object at end  
+}
+// function countCharacters(str) {
+//   const counts = {};
+//   for (let i = 0; i < str.length; i++) {
+//     // const char = str.charAt(i);
+//     const char = str[i].toLowerCase();
+//        if (char === " ") {
+//       continue; // skip white space character
+//     }
+//     else if(counts[char] > 0) {
+//       counts[char]++;
+//     } else {
+//       counts[char] = 1;
+//     }
+//   }
+//   return counts;
+// }
+
+function countCharacters(str) {
+  const counts = {};
+  for (let i = 0; i < str.length; i++) {
+    // const char = str.charAt(i);
+    const char = str[i].toLowerCase();
+       if (char === " ") {
+      continue; // skip white space character
+    }
+    else if(char in counts) {
+      counts[char]++;
+    } else {
+      counts[char] = 1;
+    }
+  }
+  return counts;
+}
+
+
+countCharacters('aaaa')
+countCharacters('muhammad')
+countCharacters('My phone number is 123456')
 
