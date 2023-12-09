@@ -1,26 +1,12 @@
-/* 
-Big 0 of Objects
--Insertion - O(1)
--Removal - O(1)
--Searching - O(N)
--Access - 0(1)
-When you don't need any ordering, objects are an excellent choice!
-*/
-
-let instructor = {
-  firstName: "Muhammad",
-  isInstructor: true,
-  favoriteNumbers: [1,2,3,4]
-}
-
-Object.keys(instructor);
-Object.entries(instructor);
-instructor.hasOwnProperty("firstName");
-
-/* 
-Big 0 of Object Methods
-Object.keys - O(N)
-Object.values - O(N)
-Object.entries - O(N)
-hasOwnProperty - O(1)
-*/
+// Big 0 of Array Operations
+// • push - O(1)
+// • pop - O(1)
+// • shift - O(N)
+// You don't need to know all this...
+// • unshift - O(N)
+// X
+// • concat - O(N)
+// • slice - O(N)
+// • splice - O(N)
+// • sort - O(N * log N)
+// • forEach/map/filter/reduce/etc. - O(N)
